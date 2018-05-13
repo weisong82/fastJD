@@ -1,0 +1,17 @@
+$def with (todos, form)
+
+<form action="" method="post">
+$:form.render()
+</form>
+
+<table border="2">
+    <tr>
+        <th>相似度</th>
+        <th>内容</th>
+    </tr>
+$for todo in todos:
+    <tr>
+        <td>$todo[0]</td>
+        <td> $todo[1]</td>
+    </tr>
+</table>
