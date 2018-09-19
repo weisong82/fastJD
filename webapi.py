@@ -20,7 +20,7 @@ render = web.template.render('templates', base='base')
 
 class Index:
     form = web.form.Form(
-        web.form.Textbox('query', webapi.form.notnull,
+        web.form.Textbox('query', web.form.notnull,
                             description="关键词查询-词和词空格,不少于3+个词才准（java web 开发）:"),
         web.form.Button('Add query'),
     )
