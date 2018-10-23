@@ -1,2 +1,2 @@
-web.py==0.40-dev1
+flask
 gensim

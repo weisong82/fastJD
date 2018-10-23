@@ -11,11 +11,12 @@
 1.  nlp_1.py  
 里面有完整的处理过程-从爬虫db里面读取的title，content，到分词、停用词处理，词袋训练
 
-2. webapi.py 
-简单的基于webpy框架封装个web服务来提供查询和返回
+2. app.py 
+简单的基于flask框架封装个web服务来提供查询和返回。进入本目录，然后执行：
+export FLASK_APP=app.py;flask run;
 
 # 测试地址：
-http://134.175.207.54:8080/ （资源已过期~）
+http://134.175.207.54:8080/ 
 
 可以尝试查询词组(按词查询，词之间空格)：\
 linux socket 底层\

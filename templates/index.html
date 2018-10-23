@@ -1,7 +1,8 @@
-$def with (todos, form)
+"关键词查询-词和词空格,不少于3+个词才准（java web 开发）:"
 
-<form action="" method="post">
-$:form.render()
+<form action="/" method="post">
+    <input name="query" size="13" value="{{query}}">
+    <button type="submit">提交查询</button>
 </form>
 
 <table border="2">
@@ -9,9 +10,11 @@ $:form.render()
         <th>相似度</th>
         <th>内容</th>
     </tr>
-$for todo in todos:
+
+    {% for item in data %}
     <tr>
-        <td>$todo[0]</td>
-        <td> $todo[1]</td>
+        <td>{{ item[0] }}</td>
+        <td>{{ item[1] }}</td>
     </tr>
+    {% endfor %}
 </table>
