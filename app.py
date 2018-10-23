@@ -15,9 +15,8 @@ lines = open('cropus.txt', 'r').readlines()
 @app.route('/',methods=['POST', 'GET'])
 def index():
     data = []
-    querys = request.form['query']
     if request.method == 'POST':
-
+        querys= request.form['query']
         print('doc2bow %s', querys)
         global D
         vec_querys = D.dictionary.doc2bow(querys.lower().split())
@@ -31,10 +30,11 @@ def index():
         sims = sorted(enumerate(sims), key=lambda item: -item[1])[0:10]
 
         print("make a Q:(%s) ,return top :", querys)
-        data = []
+
         for s in sims:
             data.append( (s[1], lines[s[0]]) )
             #print(s[1], s[0]) #0.515109 11062 相似度 docid
             #print(lines[s[0]]) #doc
-
+    else:
+        querys = ""
     return render_template('index.html', data=data,query=querys)
