@@ -15,8 +15,9 @@ lines = open('cropus.txt', 'r').readlines()
 @app.route('/',methods=['POST', 'GET'])
 def index():
     data = []
+    querys = request.form['query']
     if request.method == 'POST':
-        querys= request.form['query']
+
         print('doc2bow %s', querys)
         global D
         vec_querys = D.dictionary.doc2bow(querys.lower().split())
